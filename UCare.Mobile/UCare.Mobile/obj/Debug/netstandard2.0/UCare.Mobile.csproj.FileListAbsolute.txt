@@ -1,0 +1,14 @@
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\bin\Debug\netstandard2.0\UCare.Mobile.deps.json
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\bin\Debug\netstandard2.0\UCare.Mobile.dll
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\bin\Debug\netstandard2.0\ref\UCare.Mobile.dll
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\bin\Debug\netstandard2.0\UCare.Mobile.pdb
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\obj\Debug\netstandard2.0\UCare.Mobile.csprojAssemblyReference.cache
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\obj\Debug\netstandard2.0\UCare.Mobile.AssemblyInfoInputs.cache
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\obj\Debug\netstandard2.0\UCare.Mobile.AssemblyInfo.cs
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\obj\Debug\netstandard2.0\UCare.Mobile.csproj.CoreCompileInputs.cache
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\obj\Debug\netstandard2.0\UCare.Mobile.dll
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\obj\Debug\netstandard2.0\ref\UCare.Mobile.dll
+C:\Users\Nedu\Projects\UCare\UCare.Mobile\UCare.Mobile\obj\Debug\netstandard2.0\UCare.Mobile.pdb

@@ -1,0 +1,5 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="_content/Blazored.Menu" Path="C:\Users\user\.nuget\packages\blazored.menu\2.0.5\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Blazored.Modal" Path="C:\Users\user\.nuget\packages\blazored.modal\5.1.0\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Blazored.Toast" Path="C:\Users\user\.nuget\packages\blazored.toast\3.1.2\build\..\staticwebassets\" />
+</StaticWebAssets>

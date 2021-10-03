@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dcd476f1-9697-4bfd-90d7-b1092b9f1841": {
+      "ProjectGuid": "dcd476f1-9697-4bfd-90d7-b1092b9f1841",
+      "DisplayName": "UCare.WebAPI",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

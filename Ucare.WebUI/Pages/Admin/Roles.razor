@@ -1,0 +1,140 @@
+﻿@page "/roles"
+@page "/roles/{id}"
+@inherits RoleBase
+@attribute [Authorize(Roles="Admin")]
+@using UCare.Models.AppSettingsModel
+
+
+
+
+@if (showUserEditorPage == false)
+{
+@if (identityRoles == null)
+    {
+        if (isBusy == true)
+        {
+
+<div class="spinner text-center"></div>
+}
+    }
+    else
+    {
+<AuthorizeView Policy="@Policies.IsAdminView">
+    <Authorized>
+        <div>
+            <a href="@($"editrole/{0}")"
+            class="btn btn-primary m-1">Add new role</a>
+        </div>
+        <div class="box-body table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Edit Role</th>
+                        <th>Delete Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (identityRoles.Count() > 0)
+                        {
+                    @foreach (var identityRole in identityRoles)
+                            {
+                    <DisplayRole identityRole="identityRole"
+OnRoleDeleted="RoleDeleted" OnShowRoleEditor="ShowRoleEditor"></DisplayRole>
+                            }
+                            }
+                        else
+                        {
+                    <tr class="text-center">
+                        <span class="text-warning">No role was found due to issue encountered while searching for users.</span>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </Authorized>
+
+</AuthorizeView>
+<AuthorizeView>
+    <NotAuthorized>
+        <h3>Access denied, you might try login in. </h3>
+    </NotAuthorized>
+
+</AuthorizeView>
+    }       }
+
+
+@if (showUserEditorPage == true)
+{
+<div class="smallcard">
+
+    <EditForm Model="@editRoleViewModel" OnValidSubmit="HandleRoleEditUpdate">
+        <div class="card-header">@pageHeaderText</div>
+        @if (isBusy == true)
+            {
+        <div class="spinner"></div>
+        }
+        <div class="row">
+            <div class="col text-center">
+                <AlertMessage Message="@message" MessageType="@messageType" />
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <InputText id="userId" class="form-control"
+                @bind-Value="editRoleViewModel.Id" disabled />
+                <ValidationMessage For="@(() => editRoleViewModel.Id)" />
+            </div>
+            <div class="col">
+                <InputText id="roleName" class="form-control" placeholder="Role name"
+                @bind-Value="editRoleViewModel.RoleName" />
+                <ValidationMessage For="@(() => editRoleViewModel.RoleName)" />
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary" type="submit">Update</button>
+                <button type="button" class="btn btn-primary"
+                @onclick="CancelRoleEdit">
+                    Cancel
+                </button>
+            </div>
+        </div>
+       
+    </EditForm>
+
+    <div class="roles">
+        <div class="card-header">
+            <div>Users in @editRoleViewModel.RoleName role</div>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                @if (editRoleViewModel.Users != null)
+                    {
+                @if (users.Any())
+                        {
+                            foreach (var role in users)
+                            {
+                <h5 class="text-dark">@role</h5>
+                }
+                        }
+                        else
+                        {
+                <h3 class="text-dark">None at the moment</h3>
+                }
+                    }
+            </ul><br />
+            <a href="@($"/manageUserRoles/{editRoleViewModel.Id}")"
+            class="btn btn-primary">Manage Users</a>
+        </div>
+    </div>
+</div>
+<br />
+}
+
+
+
+

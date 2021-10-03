@@ -1,0 +1,80 @@
+﻿@page "/register"
+ 
+@inherits RegisterBase
+@using  Ucare.WebUI.Shared.Components
+
+@inject NavigationManager NavigationManager
+
+
+
+
+<div class="register">
+  <div class="card-header">
+    <div class="header">Register New Membership</div>
+  </div>
+  <div class="card-body">
+<EditForm Model="@registerViewModel" OnValidSubmit="HandleValidSubmit">
+
+    <div class="row">
+        <div class="col-md-2">
+            
+        </div>
+        <div class="col-md-8">
+            <div class="bg-light">
+
+                <div class="form-box" id="login-box">
+                    
+                    <div>
+                          <AlertMessage Message="@message" MessageType="@messageType" />
+                         <DataAnnotationsValidator />
+                         <ValidationSummary />
+                        <div class="body bg-gray">
+                            <div class="form-group">
+                                <InputText id="email" type="email" class="form-control" placeholder="Email address"
+                                           @bind-Value="registerViewModel.Email" />
+                                <ValidationMessage For="@(() => registerViewModel.Email)" />
+                            </div>
+                             <div class="form-group">
+                                <InputText id="confirmEmail" class="form-control" placeholder="Retype email"
+                                           @bind-Value="registerViewModel.ConfirmEmail" />
+                                <ValidationMessage For="@(() => registerViewModel.ConfirmEmail)" />
+                            </div>
+                            <div class="form-group">
+                                <InputText id="password" type="password" class="form-control" placeholder="Password"
+                                           @bind-Value="registerViewModel.Password" />
+                                <ValidationMessage For="@(() => registerViewModel.Password)" />
+                            </div>
+                            <div class="form-group">
+                                <InputText id="confirmPassword" type="password" class="form-control" placeholder="Retype password"
+                                           @bind-Value="registerViewModel.ConfirmPassword" />
+                                <ValidationMessage For="@(() => registerViewModel.ConfirmPassword)" />
+                            </div>
+                        </div>
+                        <div class="footer">
+                            @if (isBusy == true)
+                            {
+                            <div class="spinner"></div>
+                            }
+                            <button type="submit" class="btn bg-olive btn-success">Register</button>
+                            <a href="/login" class="text-center sm-olive btn-link">I already have a membership</a>
+                        </div>
+                    </div>
+
+                    <div class="margin text-center">
+                        <span>Register using social networks</span>
+                        <br />
+                        <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook">facebook</i></button>
+                        <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter">twitter</i></button>
+                        <button class="btn bg-red btn-circle"><i class="fa fa-google-plus">google</i></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+</EditForm>
+  </div>
+</div>

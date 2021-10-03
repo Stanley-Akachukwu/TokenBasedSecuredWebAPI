@@ -1,0 +1,32 @@
+﻿@inherits DisplayRoleBase
+
+ <tr>
+                    <td>
+                      @*  <a href="@($"viewrole/{identityRole.Id}")"
+               class="btn btn-link m-1">@identityRole.Name</a>*@
+               @identityRole.Name
+                    </td>
+                    <td>
+                     <button type="button" class="btn btn-primary"
+                        @onclick="ShowRoleEditor_Click">
+                            Edit
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger"
+                        @onclick="Delete_Click">
+                            Delete
+                        </button>
+                    </td>
+                    <td><span class="label label-success">Approved</span></td>
+                </tr>
+           <Confirm ConfirmationChanged="ConfirmDelete_Click" @ref="DeleteConfirmation"
+ConfirmationMessage=@($"Are you sure you want to delete \"{identityRole.Name}\"")></Confirm>
+
+
+
+
+
+
+
+ 

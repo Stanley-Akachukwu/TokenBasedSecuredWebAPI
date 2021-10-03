@@ -1,0 +1,28 @@
+C:\Users\Nedu\Projects\UCare\UCare.Models\bin\Debug\netstandard2.1\UCare.Models.deps.json
+C:\Users\Nedu\Projects\UCare\UCare.Models\bin\Debug\netstandard2.1\UCare.Models.dll
+C:\Users\Nedu\Projects\UCare\UCare.Models\bin\Debug\netstandard2.1\UCare.Models.pdb
+C:\Users\Nedu\Projects\UCare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.AssemblyInfoInputs.cache
+C:\Users\Nedu\Projects\UCare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.AssemblyInfo.cs
+C:\Users\Nedu\Projects\UCare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.csproj.CoreCompileInputs.cache
+C:\Users\Nedu\Projects\UCare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.dll
+C:\Users\Nedu\Projects\UCare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.pdb
+C:\Users\Nedu\Projects\UCare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.csprojAssemblyReference.cache
+C:\Users\Chinedu Akachukwu\source\repos\My-Ucare\UCare.Models\bin\Debug\netstandard2.1\UCare.Models.deps.json
+C:\Users\Chinedu Akachukwu\source\repos\My-Ucare\UCare.Models\bin\Debug\netstandard2.1\UCare.Models.dll
+C:\Users\Chinedu Akachukwu\source\repos\My-Ucare\UCare.Models\bin\Debug\netstandard2.1\UCare.Models.pdb
+C:\Users\Chinedu Akachukwu\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.csprojAssemblyReference.cache
+C:\Users\Chinedu Akachukwu\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.AssemblyInfoInputs.cache
+C:\Users\Chinedu Akachukwu\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.AssemblyInfo.cs
+C:\Users\Chinedu Akachukwu\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.csproj.CoreCompileInputs.cache
+C:\Users\Chinedu Akachukwu\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.dll
+C:\Users\Chinedu Akachukwu\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.pdb
+C:\Users\user\Desktop\Clone\source\repos\My-Ucare\UCare.Models\bin\Debug\netstandard2.1\UCare.Models.deps.json
+C:\Users\user\Desktop\Clone\source\repos\My-Ucare\UCare.Models\bin\Debug\netstandard2.1\UCare.Models.dll
+C:\Users\user\Desktop\Clone\source\repos\My-Ucare\UCare.Models\bin\Debug\netstandard2.1\UCare.Models.pdb
+C:\Users\user\Desktop\Clone\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Clone\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Clone\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Clone\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.AssemblyInfo.cs
+C:\Users\user\Desktop\Clone\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Clone\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.dll
+C:\Users\user\Desktop\Clone\source\repos\My-Ucare\UCare.Models\obj\Debug\netstandard2.1\UCare.Models.pdb

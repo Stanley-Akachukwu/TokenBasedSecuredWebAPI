@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "xY93LrSAaDzm2ZQna4hNzVt8ubMVgEuW1c6nqasW2A9AqjgerWuHJuSLPt0tssI5rAzfpXwgIOvYxRtpfTxObw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Nedu\\Projects\\UCare\\UCare.Mobile\\UCare.Mobile.iOS\\UCare.Mobile.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+  ],
+  "logs": []
+}

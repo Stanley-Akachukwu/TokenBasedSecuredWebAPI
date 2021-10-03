@@ -1,0 +1,239 @@
+﻿@page "/users"
+@page "/users/{id}"
+@inherits UsersBase
+@using UCare.Models.AppSettingsModel
+@attribute [Authorize]
+
+
+@if (activeComponent == identityUsersListComponent)
+{
+@if (registeredUsers == null)
+    {
+        if (isBusy == true)
+        {
+          <div class="spinner text-center"></div>
+        }
+    }
+    else
+    {
+<AuthorizeView Policy="@Policies.IsAdminView">
+    <Authorized>
+
+        <div class="box-body table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>User Name</th>
+                        <th>Edit User</th>
+                        <th>Delete User</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (registeredUsers.Count() > 0)
+                        {
+                    @foreach (var registeredUser in registeredUsers)
+                            {
+                    <DisplayUser registeredUser="registeredUser"
+                     OnRegisteredUserDeleted="RegisteredUserDeleted" OnShowUserEditor="ShowUserEditor"></DisplayUser>
+                            }
+                            }
+                        else
+                        {
+                    <tr class="text-center">
+                        <span class="text-warning">No user was found due to issue encountered while searching for users.</span>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </Authorized>
+
+</AuthorizeView>
+<AuthorizeView>
+    <NotAuthorized>
+        <h3>Access denied, you might try login in. </h3>
+    </NotAuthorized>
+
+</AuthorizeView>
+    }      
+}
+
+
+
+@if (activeComponent == userEditorComponent)
+{
+<div class="smallcard">
+
+    <EditForm Model="@editUserViewModel" OnValidSubmit="HandleUserEditUpdate">
+        <div class="card-header">@pageHeaderText</div>
+        @if (isBusy == true)
+            {
+        <div class="spinner"></div>
+        }
+        <div class="row">
+            <div class="col text-center">
+                <AlertMessage Message="@message" MessageType="@messageType" />
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+            </div>
+        </div>
+
+        <div class="row card-body">
+            <div class="col">
+                <InputText id="userId" class="form-control"
+                @bind-Value="editUserViewModel.Id" disabled />
+                <ValidationMessage For="@(() => editUserViewModel.Id)" />
+            </div>
+            <div class="col">
+                <InputText id="email" type="email" class="form-control" placeholder="email"
+                @bind-Value="editUserViewModel.Email" />
+                <ValidationMessage For="@(() => editUserViewModel.Email)" />
+            </div>
+            <div class="col">
+                <InputText id="userName" class="form-control" placeholder="User name"
+                @bind-Value="editUserViewModel.UserName" />
+                <ValidationMessage For="@(() => editUserViewModel.UserName)" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary" type="submit">Update</button>
+                <button type="button" class="btn btn-primary"
+                @onclick="CancelUserEdit">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </EditForm>
+
+
+
+    <div class="roles">
+        <div class="card-header">
+            <div>User Roles</div>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                @if (roles != null)
+                    {
+                @if (roles.Any())
+                        {
+                            foreach (var role in roles)
+                            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @role
+                    <span class="badge badge-primary badge-pill">1</span>
+                </li>
+                }
+                        }
+                        else
+                        {
+                <h5 class="card-title">None at the moment</h5>
+                }
+                    }
+            </ul><br />
+            <button @onclick="@(() => ManageUsersRoles(editUserViewModel.Id))" class="btn btn-primary">Manage Roles</button>
+        </div>
+    </div>
+
+    <div class="claims">
+        <div class="card-header">
+            <div>User Claims</div>
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+
+
+                @if (claims != null)
+                    {
+                @if (claims.Any())
+                        {
+                            foreach (var role in claims)
+                            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @role
+                    <span class="badge badge-primary badge-pill">1</span>
+                </li>
+                }
+                        }
+                        else
+                        {
+                <h5 class="card-title">None at the moment</h5>
+                }
+                    }
+            </ul><br />
+            <button @onclick="@(() => ManageUsersClaimss(editUserViewModel.Id))" class="btn btn-primary">Manage Claims</button>
+        </div>
+    </div>
+
+</div>
+<br />
+}
+
+
+
+
+@if(activeComponent == manageUserRolesComponent){
+    
+<div class="modal" tabindex="-1" style="display:block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> <div class="card-header">@pageHeaderText</div></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="@(() => ClosePopupDialog())">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                
+            </div>
+            <EditForm Model="@userRoles" OnValidSubmit="HandleUserRolesEditUpdate">
+                <div class="modal-body">
+                   
+                    @if (isBusy == true)
+                        {
+                    <div class="spinner"></div>
+                    }
+                    <div class="row">
+                        <div class="col text-center">
+                            <AlertMessage Message="@message" MessageType="@messageType" />
+                            <DataAnnotationsValidator />
+                            <ValidationSummary />
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        @for (int i = 0; i < userRoles.Count; i++)
+                            {
+                                var iteration =i;
+                        <div>
+                            <input type="hidden" @bind="userRoles[i].RoleId" />
+                            <input type="hidden" @bind="userRoles[i].RoleName" />
+                            @* <input type="checkbox"  @bind="userRoles[i].IsSelected"/>*@
+                            <InputCheckbox @bind-Value=userRoles[iteration].IsSelected />
+                             <label  style="width: 150px;">
+                             @userRoles[i].RoleName</label>
+                        </div><br />
+                        }
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" @onclick="@(() => HandleUserRolesEditUpdate())">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </EditForm>
+
+        </div>
+    </div>
+</div>
+}
+
+  
+
+
+
+
+

@@ -1,0 +1,41 @@
+﻿@inject AuthenticationStateProvider _authenticationStateProvider
+@inject NavigationManager  navigationManager 
+@attribute [Authorize]
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto pull-left">
+    <AuthorizeView>
+    <Authorized>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+       <form class="form-inline my-2 my-lg-0 pull-left">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search  &nbsp;</button>
+    </form>
+    <button @onclick="Logout" class="btn btn-link btn-sm">
+            <span>Welcome @context.User.FindFirst("FirstName").Value </span>
+                 Logout &nbsp;
+            </button>
+    </Authorized>
+    <NotAuthorized>
+          <a href="/Register">Register &nbsp;</a>
+        <a href="/Login">Log in</a>
+    </NotAuthorized>
+</AuthorizeView>
+    </ul>
+  </div>
+</nav>
+
+
+
+@code {
+
+    async Task Logout()
+    {
+        var localStateProvider = (LocalAuthenticationStateProvider)_authenticationStateProvider;
+        await localStateProvider.LogoutAsync();
+        navigationManager.NavigateTo("/login"); 
+    }
+}

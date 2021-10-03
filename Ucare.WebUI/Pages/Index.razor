@@ -1,0 +1,33 @@
+﻿@page "/"
+ 
+@using Ucare.WebUI.Pages.User
+<section class="content">
+<AuthorizeView>
+    <Authorized>
+        <h1>Welcome  @context.User.FindFirst("FirstName").Value </h1>
+    </Authorized>
+     <NotAuthorized>
+        <h1>Welcome, you might have to login. </h1>
+    </NotAuthorized>
+</AuthorizeView>
+    <div class="row">
+        <div class="col-md-5">
+             <h1 class="alert-success">OurCulture</h1> <p>
+OurCulture restores all the good-side value system of our origin by connecting original people to share values.</p>
+        </div> 
+        <div class="col-md-5">
+             <AuthorizeView>
+     <NotAuthorized>
+        <Login />
+    </NotAuthorized>
+</AuthorizeView>
+        </div> 
+    </div> 
+
+</section> 
+
+
+ https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-3.1
+Next task => create roles, edit role, delete role, add user in role, remove user inav role etc.
+<br />
+https://stackoverflow.blog/2020/02/26/whats-behind-the-hype-about-blazor/
